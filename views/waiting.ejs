@@ -1,0 +1,138 @@
+<%- include("template/header.ejs") -%>
+<main>
+  <!-- px-4 -->
+  <div class="mt-5 pt-5 text-center">
+    <h1 class="fw-bold m-5">2021 Will End In</h1>
+    <div class="container">
+      <div class="row justify-content-md-center mx-auto">
+        <div class="col-md-2">
+          <div
+            class="card rounded border-primary border-3"
+            style="
+              width: 8rem;
+              box-shadow: 21px 28px 45px 0px rgba(0, 0, 0, 0.63);
+            "
+          >
+            <div class="card-body d-block">
+              <h1 class="card-title fw-bold text-primary" id="day">00</h1>
+              <h5 class="card-text fw-bold">Day</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div
+            class="card rounded border-primary border-3"
+            style="
+              width: 8rem;
+              box-shadow: 21px 28px 45px 0px rgba(0, 0, 0, 0.63);
+            "
+          >
+            <div class="card-body d-block">
+              <h1 class="card-title fw-bold text-primary" id="hour">00</h1>
+              <h5 class="card-text fw-bold">Hours</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div
+            class="card rounded border-primary border-3"
+            style="
+              width: 8rem;
+              box-shadow: 21px 28px 45px 0px rgba(0, 0, 0, 0.63);
+            "
+          >
+            <div class="card-body d-block">
+              <h1 class="card-title fw-bold text-primary" id="minute">00</h1>
+              <h5 class="card-text fw-bold">Minutes</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div
+            class="card rounded border-primary border-3"
+            style="
+              width: 8rem;
+              box-shadow: 21px 28px 45px 0px rgba(0, 0, 0, 0.63);
+            "
+          >
+            <div class="card-body d-block">
+              <h1 class="card-title fw-bold text-primary" id="second">00</h1>
+              <h5 class="card-text fw-bold">Seconds</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#a2d9ff"
+        fill-opacity="1"
+        d="M0,128L30,149.3C60,171,120,213,180,218.7C240,224,300,192,360,186.7C420,181,480,203,540,186.7C600,171,660,117,720,96C780,75,840,85,900,112C960,139,1020,181,1080,176C1140,171,1200,117,1260,122.7C1320,128,1380,192,1410,224L1440,256L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+      ></path>
+    </svg>
+  </div>
+
+  <div style="background-color: #a2d9ff" class="pt-5 pb-5">
+    <h1 class="display-5 fw-bold text-center">I'm make this project using</h1>
+    <div class="col-lg-6 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <ul class="card-text fw-bold">
+            <li>NodeJS</li>
+            <li>Express</li>
+            <li>Bootstrap</li>
+            <li>Animate.css</li>
+            <li>AOS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="text-center p-5">
+      <a
+        href="https://github.com/saronggos/happynewyear22"
+        class="btn text-white"
+        style="background-color: #333"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><i class="bi bi-github"></i>&nbsp; View in Github</a
+      >
+    </div>
+  </div>
+</main>
+<form action="" method="post" id="director"></form>
+
+<script>
+  var director = document.getElementById("director");
+  var countDate = new Date("Jan 1, 2022 00:00:00").getTime();
+  function newYear() {
+    var now = new Date().getTime();
+    gap = countDate - now;
+
+    var second = 1000;
+    var minute = second * 60;
+    var hour = minute * 60;
+    var day = hour * 24;
+
+    var d = Math.floor(gap / day);
+    var h = Math.floor((gap % day) / hour);
+    var m = Math.floor((gap % hour) / minute);
+    var s = Math.floor((gap % minute) / second);
+
+    document.getElementById("day").innerText = d;
+    document.getElementById("hour").innerText = h;
+    document.getElementById("minute").innerText = m;
+    document.getElementById("second").innerText = s;
+    if (h == 0 && m == 0 && s <= 15) {
+      director.submit();
+    }
+    if (h <= 0 && m <= 0 && s <= 0) {
+      window.location.replace("/newyear");
+    }
+  }
+
+  setInterval(function () {
+    newYear();
+  }, 1000);
+</script>
+
+<%- include("template/footer.ejs") -%>
