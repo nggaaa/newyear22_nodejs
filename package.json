@@ -2,15 +2,22 @@
   "name": "happynewyearbootstrap",
   "version": "1.0.0",
   "description": "For New Year 2022",
-  "main": "server.js",
+  "main": "web.js",
   "scripts": {
-    "start": "nodemon server"
+"test": "echo \"Error: no test specified\" && exit 1",
+"start": "node web"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+	"example",
+	"heroku"
+],
+  "author": "Saronggos",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
