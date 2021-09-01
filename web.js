@@ -1,13 +1,10 @@
 const express = require("express");
 const app = express();
-const port = 8000;
+const port = 3000;
 
 app.set("view engine", "ejs");
 
-// app.post("/", (req, res) => {
-//   res.send("<h1>Coming Soon</h1>");
-// });
-app.get("/biarbisa", (req, res) => {
+app.post("/", (req, res) => {
   res.render("bigcount");
 });
 

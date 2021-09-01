@@ -1,13 +1,21 @@
 <%- include("template/header.ejs") -%>
+
 <main>
   <!-- px-4 -->
   <div class="mt-5 pt-5 text-center">
-    <h1 class="fw-bold m-5">2021 Will End In</h1>
+    <h1 class="fw-bold m-5 animate__animated animate__tada">
+      2021 Will End In
+    </h1>
     <div class="container">
       <div class="row justify-content-md-center mx-auto">
         <div class="col-md-2">
           <div
-            class="card rounded border-primary border-3"
+            class="
+              card
+              rounded
+              border-primary border-3
+              animate__animated animate__bounceInUp animate__delay-1s
+            "
             style="
               width: 8rem;
               box-shadow: 21px 28px 45px 0px rgba(0, 0, 0, 0.63);
@@ -21,7 +29,12 @@
         </div>
         <div class="col-md-2">
           <div
-            class="card rounded border-primary border-3"
+            class="
+              card
+              rounded
+              border-primary border-3
+              animate__animated animate__bounceInUp animate__delay-2s
+            "
             style="
               width: 8rem;
               box-shadow: 21px 28px 45px 0px rgba(0, 0, 0, 0.63);
@@ -35,7 +48,12 @@
         </div>
         <div class="col-md-2">
           <div
-            class="card rounded border-primary border-3"
+            class="
+              card
+              rounded
+              border-primary border-3
+              animate__animated animate__bounceInUp animate__delay-3s
+            "
             style="
               width: 8rem;
               box-shadow: 21px 28px 45px 0px rgba(0, 0, 0, 0.63);
@@ -49,7 +67,12 @@
         </div>
         <div class="col-md-2">
           <div
-            class="card rounded border-primary border-3"
+            class="
+              card
+              rounded
+              border-primary border-3
+              animate__animated animate__bounceInUp animate__delay-4s
+            "
             style="
               width: 8rem;
               box-shadow: 21px 28px 45px 0px rgba(0, 0, 0, 0.63);
@@ -63,7 +86,11 @@
         </div>
       </div>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="animate__animated animate__slideInUp"
+      viewBox="0 0 1440 320"
+    >
       <path
         fill="#a2d9ff"
         fill-opacity="1"
@@ -73,9 +100,14 @@
   </div>
 
   <div style="background-color: #a2d9ff" class="pt-5 pb-5">
-    <h1 class="display-5 fw-bold text-center">I'm make this project using</h1>
+    <h1
+      class="display-5 fw-bold text-center mt-5 pt-5 mb-5"
+      data-aos="fade-right"
+    >
+      I'm make this project using
+    </h1>
     <div class="col-lg-6 mx-auto">
-      <div class="card">
+      <div class="card" data-aos="zoom-in" data-aos-delay="500">
         <div class="card-body">
           <ul class="card-text fw-bold">
             <li>NodeJS</li>
@@ -93,13 +125,15 @@
         class="btn text-white"
         style="background-color: #333"
         target="_blank"
+        data-aos="fade-up"
+        data-aos-delay="1000"
         rel="noopener noreferrer"
         ><i class="bi bi-github"></i>&nbsp; View in Github</a
       >
     </div>
   </div>
 </main>
-<form action="" method="post" id="director"></form>
+<form action="" method="post" id="director" class="d-none"></form>
 
 <script>
   var director = document.getElementById("director");
